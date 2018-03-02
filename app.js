@@ -20,11 +20,11 @@ const options = {
 const AfricasTalking = require('africastalking')(options);
 
 app.get('*', (req, res) => {
-  res.send('This is tutorial App on creating your first USSD app')
+  res.send('This is the working version of the ussd app ')
 })
 
 
-app.post('*', (req, res) => {
+app.post('/ussd', (req, res) => {
     let {sessionId, serviceCode, phoneNumber, text} = req.body
     if (text == '') {
       // This is the first request. Note how we start the response with CON

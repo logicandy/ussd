@@ -1,4 +1,3 @@
-
 const app = require('express')()
 const bodyParser = require('body-parser')
 const logger = require('morgan')
@@ -58,6 +57,9 @@ app.post('/ussd', (req, res) => {
       res.status(400).send('Bad request!')
     }
   })
+
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)

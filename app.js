@@ -1,20 +1,21 @@
-const app = require('express')()
-const bodyParser = require('body-parser')
-const logger = require('morgan')
+const app = require('express')();
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+require('dotenv').config();
 
 const port = process.env.PORT || 3030
 
 
 
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //set up africastalking
 
 const options = {
-    apiKey: '3e18263a55c0f01b35a22c4be97b670ac09a126450b4d6cf39406c72b4b2164f',  
-    username: 'sandbox'
+    apiKey: process.env.APIKEY,  
+    username: process.env.USERNAME
 };
 const AfricasTalking = require('africastalking')(options);
 

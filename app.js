@@ -64,7 +64,7 @@ app.post('/ussd', (req, res) => {
     //INITIALIZE RESPONSES
 
     // This is the first request. Note how we start the response with CON
-    let SizeResponse = `CON Welcome to Gasify, Select your cylinder size:
+    let sizeResponse = `CON Welcome to Gasify, Select your cylinder size:
     1. 12kg(price)
     2. 10kg(price)
     3. 6kg(price)
